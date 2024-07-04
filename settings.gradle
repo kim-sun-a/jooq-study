@@ -1,1 +1,3 @@
 rootProject.name = 'jooq-first-look'
+include 'jooq-custom'
+
