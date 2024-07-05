@@ -20,4 +20,14 @@ public class FilmRepository {
                 .fetchOneInto(Film.class);
     }
 
+    public SimpleFilmInfo findSimpleFilmInfoById(Long id) {
+        return dslContext.select(
+                    FILM.FILM_ID,
+                    FILM.TITLE,
+                    FILM.DESCRIPTION)
+                .from(FILM)
+                .where(FILM.FILM_ID.eq(id))
+                .fetchOneInto(SimpleFilmInfo.class);
+    }
+
 }

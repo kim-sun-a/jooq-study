@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import suna.jooqfirstlook.film.FilmRepository;
+import suna.jooqfirstlook.film.SimpleFilmInfo;
 
 @SpringBootTest
 public class JooqStartSelectTest {
@@ -19,5 +20,12 @@ public class JooqStartSelectTest {
     void test() {
         Film film = filmRepository.findById(1L);
         Assertions.assertThat(film).isNotNull();
+    }
+
+    @Test
+    @DisplayName("2) 영화 정보 간략 조회")
+    void test2() {
+        SimpleFilmInfo simpleFilmInfo = filmRepository.findSimpleFilmInfoById(1L);
+        Assertions.assertThat(simpleFilmInfo).hasNoNullFieldsOrProperties();
     }
 }
