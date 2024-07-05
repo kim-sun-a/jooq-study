@@ -23,7 +23,7 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Setter for <code>sakila.film_category.film_id</code>.
      */
-    public FilmCategoryRecord setFilmId(Integer value) {
+    public FilmCategoryRecord setFilmId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Getter for <code>sakila.film_category.film_id</code>.
      */
-    public Integer getFilmId() {
-        return (Integer) get(0);
+    public Long getFilmId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.film_category.category_id</code>.
      */
-    public FilmCategoryRecord setCategoryId(Integer value) {
+    public FilmCategoryRecord setCategoryId(Long value) {
         set(1, value);
         return this;
     }
@@ -46,8 +46,8 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Getter for <code>sakila.film_category.category_id</code>.
      */
-    public Integer getCategoryId() {
-        return (Integer) get(1);
+    public Long getCategoryId() {
+        return (Long) get(1);
     }
 
     /**
@@ -70,7 +70,7 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     // -------------------------------------------------------------------------
 
     @Override
-    public Record2<Integer, Integer> key() {
+    public Record2<Long, Long> key() {
         return (Record2) super.key();
     }
 
@@ -88,7 +88,7 @@ public class FilmCategoryRecord extends UpdatableRecordImpl<FilmCategoryRecord> 
     /**
      * Create a detached, initialised FilmCategoryRecord
      */
-    public FilmCategoryRecord(Integer filmId, Integer categoryId, LocalDateTime lastUpdate) {
+    public FilmCategoryRecord(Long filmId, Long categoryId, LocalDateTime lastUpdate) {
         super(JFilmCategory.FILM_CATEGORY);
 
         setFilmId(filmId);

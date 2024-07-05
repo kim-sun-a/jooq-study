@@ -20,9 +20,11 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.ActorInfoRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -49,7 +51,7 @@ public class JActorInfo extends TableImpl<ActorInfoRecord> {
     /**
      * The column <code>sakila.actor_info.actor_id</code>.
      */
-    public final TableField<ActorInfoRecord, Integer> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
+    public final TableField<ActorInfoRecord, Long> ACTOR_ID = createField(DSL.name("actor_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.actor_info.first_name</code>.

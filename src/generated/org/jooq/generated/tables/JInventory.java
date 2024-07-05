@@ -35,9 +35,11 @@ import org.jooq.generated.tables.JFilm.FilmPath;
 import org.jooq.generated.tables.JRental.RentalPath;
 import org.jooq.generated.tables.JStore.StorePath;
 import org.jooq.generated.tables.records.InventoryRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -64,17 +66,17 @@ public class JInventory extends TableImpl<InventoryRecord> {
     /**
      * The column <code>sakila.inventory.inventory_id</code>.
      */
-    public final TableField<InventoryRecord, Integer> INVENTORY_ID = createField(DSL.name("inventory_id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "");
+    public final TableField<InventoryRecord, Long> INVENTORY_ID = createField(DSL.name("inventory_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.inventory.film_id</code>.
      */
-    public final TableField<InventoryRecord, Integer> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<InventoryRecord, Long> FILM_ID = createField(DSL.name("film_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.inventory.store_id</code>.
      */
-    public final TableField<InventoryRecord, Integer> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<InventoryRecord, Long> STORE_ID = createField(DSL.name("store_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.inventory.last_update</code>.
@@ -154,8 +156,8 @@ public class JInventory extends TableImpl<InventoryRecord> {
     }
 
     @Override
-    public Identity<InventoryRecord, Integer> getIdentity() {
-        return (Identity<InventoryRecord, Integer>) super.getIdentity();
+    public Identity<InventoryRecord, Long> getIdentity() {
+        return (Identity<InventoryRecord, Long>) super.getIdentity();
     }
 
     @Override

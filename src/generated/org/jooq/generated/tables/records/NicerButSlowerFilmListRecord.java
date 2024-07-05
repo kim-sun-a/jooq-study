@@ -23,7 +23,7 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Setter for <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public NicerButSlowerFilmListRecord setFid(Integer value) {
+    public NicerButSlowerFilmListRecord setFid(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Getter for <code>sakila.nicer_but_slower_film_list.FID</code>.
      */
-    public Integer getFid() {
-        return (Integer) get(0);
+    public Long getFid() {
+        return (Long) get(0);
     }
 
     /**
@@ -98,7 +98,7 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Setter for <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public NicerButSlowerFilmListRecord setLength(Short value) {
+    public NicerButSlowerFilmListRecord setLength(Integer value) {
         set(5, value);
         return this;
     }
@@ -106,8 +106,8 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Getter for <code>sakila.nicer_but_slower_film_list.length</code>.
      */
-    public Short getLength() {
-        return (Short) get(5);
+    public Integer getLength() {
+        return (Integer) get(5);
     }
 
     /**
@@ -154,7 +154,7 @@ public class NicerButSlowerFilmListRecord extends TableRecordImpl<NicerButSlower
     /**
      * Create a detached, initialised NicerButSlowerFilmListRecord
      */
-    public NicerButSlowerFilmListRecord(Integer fid, String title, String description, String category, BigDecimal price, Short length, NicerButSlowerFilmListRating rating, String actors) {
+    public NicerButSlowerFilmListRecord(Long fid, String title, String description, String category, BigDecimal price, Integer length, NicerButSlowerFilmListRating rating, String actors) {
         super(JNicerButSlowerFilmList.NICER_BUT_SLOWER_FILM_LIST);
 
         setFid(fid);

@@ -26,7 +26,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.film_id</code>.
      */
-    public FilmRecord setFilmId(Integer value) {
+    public FilmRecord setFilmId(Long value) {
         set(0, value);
         return this;
     }
@@ -34,8 +34,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.film_id</code>.
      */
-    public Integer getFilmId() {
-        return (Integer) get(0);
+    public Long getFilmId() {
+        return (Long) get(0);
     }
 
     /**
@@ -86,7 +86,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.language_id</code>.
      */
-    public FilmRecord setLanguageId(Integer value) {
+    public FilmRecord setLanguageId(Long value) {
         set(4, value);
         return this;
     }
@@ -94,14 +94,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.language_id</code>.
      */
-    public Integer getLanguageId() {
-        return (Integer) get(4);
+    public Long getLanguageId() {
+        return (Long) get(4);
     }
 
     /**
      * Setter for <code>sakila.film.original_language_id</code>.
      */
-    public FilmRecord setOriginalLanguageId(Integer value) {
+    public FilmRecord setOriginalLanguageId(Long value) {
         set(5, value);
         return this;
     }
@@ -109,14 +109,14 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.original_language_id</code>.
      */
-    public Integer getOriginalLanguageId() {
-        return (Integer) get(5);
+    public Long getOriginalLanguageId() {
+        return (Long) get(5);
     }
 
     /**
      * Setter for <code>sakila.film.rental_duration</code>.
      */
-    public FilmRecord setRentalDuration(Byte value) {
+    public FilmRecord setRentalDuration(Integer value) {
         set(6, value);
         return this;
     }
@@ -124,8 +124,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.rental_duration</code>.
      */
-    public Byte getRentalDuration() {
-        return (Byte) get(6);
+    public Integer getRentalDuration() {
+        return (Integer) get(6);
     }
 
     /**
@@ -146,7 +146,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Setter for <code>sakila.film.length</code>.
      */
-    public FilmRecord setLength(Short value) {
+    public FilmRecord setLength(Integer value) {
         set(8, value);
         return this;
     }
@@ -154,8 +154,8 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Getter for <code>sakila.film.length</code>.
      */
-    public Short getLength() {
-        return (Short) get(8);
+    public Integer getLength() {
+        return (Integer) get(8);
     }
 
     /**
@@ -223,7 +223,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -241,7 +241,7 @@ public class FilmRecord extends UpdatableRecordImpl<FilmRecord> {
     /**
      * Create a detached, initialised FilmRecord
      */
-    public FilmRecord(Integer filmId, String title, String description, Year releaseYear, Integer languageId, Integer originalLanguageId, Byte rentalDuration, BigDecimal rentalRate, Short length, BigDecimal replacementCost, FilmRating rating, String specialFeatures, LocalDateTime lastUpdate) {
+    public FilmRecord(Long filmId, String title, String description, Year releaseYear, Long languageId, Long originalLanguageId, Integer rentalDuration, BigDecimal rentalRate, Integer length, BigDecimal replacementCost, FilmRating rating, String specialFeatures, LocalDateTime lastUpdate) {
         super(JFilm.FILM);
 
         setFilmId(filmId);

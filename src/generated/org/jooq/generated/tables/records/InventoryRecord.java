@@ -23,7 +23,7 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Setter for <code>sakila.inventory.inventory_id</code>.
      */
-    public InventoryRecord setInventoryId(Integer value) {
+    public InventoryRecord setInventoryId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.inventory_id</code>.
      */
-    public Integer getInventoryId() {
-        return (Integer) get(0);
+    public Long getInventoryId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.inventory.film_id</code>.
      */
-    public InventoryRecord setFilmId(Integer value) {
+    public InventoryRecord setFilmId(Long value) {
         set(1, value);
         return this;
     }
@@ -46,14 +46,14 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.film_id</code>.
      */
-    public Integer getFilmId() {
-        return (Integer) get(1);
+    public Long getFilmId() {
+        return (Long) get(1);
     }
 
     /**
      * Setter for <code>sakila.inventory.store_id</code>.
      */
-    public InventoryRecord setStoreId(Integer value) {
+    public InventoryRecord setStoreId(Long value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Getter for <code>sakila.inventory.store_id</code>.
      */
-    public Integer getStoreId() {
-        return (Integer) get(2);
+    public Long getStoreId() {
+        return (Long) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -103,7 +103,7 @@ public class InventoryRecord extends UpdatableRecordImpl<InventoryRecord> {
     /**
      * Create a detached, initialised InventoryRecord
      */
-    public InventoryRecord(Integer inventoryId, Integer filmId, Integer storeId, LocalDateTime lastUpdate) {
+    public InventoryRecord(Long inventoryId, Long filmId, Long storeId, LocalDateTime lastUpdate) {
         super(JInventory.INVENTORY);
 
         setInventoryId(inventoryId);

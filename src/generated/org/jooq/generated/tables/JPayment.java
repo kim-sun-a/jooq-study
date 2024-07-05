@@ -36,9 +36,11 @@ import org.jooq.generated.tables.JCustomer.CustomerPath;
 import org.jooq.generated.tables.JRental.RentalPath;
 import org.jooq.generated.tables.JStaff.StaffPath;
 import org.jooq.generated.tables.records.PaymentRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -65,17 +67,17 @@ public class JPayment extends TableImpl<PaymentRecord> {
     /**
      * The column <code>sakila.payment.payment_id</code>.
      */
-    public final TableField<PaymentRecord, Integer> PAYMENT_ID = createField(DSL.name("payment_id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "");
+    public final TableField<PaymentRecord, Long> PAYMENT_ID = createField(DSL.name("payment_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.payment.customer_id</code>.
      */
-    public final TableField<PaymentRecord, Integer> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<PaymentRecord, Long> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.payment.staff_id</code>.
      */
-    public final TableField<PaymentRecord, Integer> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<PaymentRecord, Long> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.payment.rental_id</code>.
@@ -170,8 +172,8 @@ public class JPayment extends TableImpl<PaymentRecord> {
     }
 
     @Override
-    public Identity<PaymentRecord, Integer> getIdentity() {
-        return (Identity<PaymentRecord, Integer>) super.getIdentity();
+    public Identity<PaymentRecord, Long> getIdentity() {
+        return (Identity<PaymentRecord, Long>) super.getIdentity();
     }
 
     @Override

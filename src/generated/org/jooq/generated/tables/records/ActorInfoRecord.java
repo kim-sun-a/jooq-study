@@ -20,7 +20,7 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Setter for <code>sakila.actor_info.actor_id</code>.
      */
-    public ActorInfoRecord setActorId(Integer value) {
+    public ActorInfoRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -28,8 +28,8 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Getter for <code>sakila.actor_info.actor_id</code>.
      */
-    public Integer getActorId() {
-        return (Integer) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
@@ -91,7 +91,7 @@ public class ActorInfoRecord extends TableRecordImpl<ActorInfoRecord> {
     /**
      * Create a detached, initialised ActorInfoRecord
      */
-    public ActorInfoRecord(Integer actorId, String firstName, String lastName, String filmInfo) {
+    public ActorInfoRecord(Long actorId, String firstName, String lastName, String filmInfo) {
         super(JActorInfo.ACTOR_INFO);
 
         setActorId(actorId);

@@ -53,7 +53,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.inventory_id</code>.
      */
-    public RentalRecord setInventoryId(Integer value) {
+    public RentalRecord setInventoryId(Long value) {
         set(2, value);
         return this;
     }
@@ -61,14 +61,14 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.inventory_id</code>.
      */
-    public Integer getInventoryId() {
-        return (Integer) get(2);
+    public Long getInventoryId() {
+        return (Long) get(2);
     }
 
     /**
      * Setter for <code>sakila.rental.customer_id</code>.
      */
-    public RentalRecord setCustomerId(Integer value) {
+    public RentalRecord setCustomerId(Long value) {
         set(3, value);
         return this;
     }
@@ -76,8 +76,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.customer_id</code>.
      */
-    public Integer getCustomerId() {
-        return (Integer) get(3);
+    public Long getCustomerId() {
+        return (Long) get(3);
     }
 
     /**
@@ -98,7 +98,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Setter for <code>sakila.rental.staff_id</code>.
      */
-    public RentalRecord setStaffId(Integer value) {
+    public RentalRecord setStaffId(Long value) {
         set(5, value);
         return this;
     }
@@ -106,8 +106,8 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Getter for <code>sakila.rental.staff_id</code>.
      */
-    public Integer getStaffId() {
-        return (Integer) get(5);
+    public Long getStaffId() {
+        return (Long) get(5);
     }
 
     /**
@@ -148,7 +148,7 @@ public class RentalRecord extends UpdatableRecordImpl<RentalRecord> {
     /**
      * Create a detached, initialised RentalRecord
      */
-    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, Integer inventoryId, Integer customerId, LocalDateTime returnDate, Integer staffId, LocalDateTime lastUpdate) {
+    public RentalRecord(Integer rentalId, LocalDateTime rentalDate, Long inventoryId, Long customerId, LocalDateTime returnDate, Long staffId, LocalDateTime lastUpdate) {
         super(JRental.RENTAL);
 
         setRentalId(rentalId);

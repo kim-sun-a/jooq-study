@@ -36,9 +36,11 @@ import org.jooq.generated.tables.JInventory.InventoryPath;
 import org.jooq.generated.tables.JPayment.PaymentPath;
 import org.jooq.generated.tables.JStaff.StaffPath;
 import org.jooq.generated.tables.records.RentalRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -75,12 +77,12 @@ public class JRental extends TableImpl<RentalRecord> {
     /**
      * The column <code>sakila.rental.inventory_id</code>.
      */
-    public final TableField<RentalRecord, Integer> INVENTORY_ID = createField(DSL.name("inventory_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<RentalRecord, Long> INVENTORY_ID = createField(DSL.name("inventory_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.rental.customer_id</code>.
      */
-    public final TableField<RentalRecord, Integer> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<RentalRecord, Long> CUSTOMER_ID = createField(DSL.name("customer_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.rental.return_date</code>.
@@ -90,7 +92,7 @@ public class JRental extends TableImpl<RentalRecord> {
     /**
      * The column <code>sakila.rental.staff_id</code>.
      */
-    public final TableField<RentalRecord, Integer> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<RentalRecord, Long> STAFF_ID = createField(DSL.name("staff_id"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.rental.last_update</code>.

@@ -23,7 +23,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Setter for <code>sakila.actor.actor_id</code>.
      */
-    public ActorRecord setActorId(Integer value) {
+    public ActorRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Getter for <code>sakila.actor.actor_id</code>.
      */
-    public Integer getActorId() {
-        return (Integer) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
@@ -85,7 +85,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -103,7 +103,7 @@ public class ActorRecord extends UpdatableRecordImpl<ActorRecord> {
     /**
      * Create a detached, initialised ActorRecord
      */
-    public ActorRecord(Integer actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
+    public ActorRecord(Long actorId, String firstName, String lastName, LocalDateTime lastUpdate) {
         super(JActor.ACTOR);
 
         setActorId(actorId);

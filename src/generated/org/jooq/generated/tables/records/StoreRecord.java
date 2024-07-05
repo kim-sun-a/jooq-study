@@ -23,7 +23,7 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Setter for <code>sakila.store.store_id</code>.
      */
-    public StoreRecord setStoreId(Integer value) {
+    public StoreRecord setStoreId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.store_id</code>.
      */
-    public Integer getStoreId() {
-        return (Integer) get(0);
+    public Long getStoreId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.store.manager_staff_id</code>.
      */
-    public StoreRecord setManagerStaffId(Integer value) {
+    public StoreRecord setManagerStaffId(Long value) {
         set(1, value);
         return this;
     }
@@ -46,14 +46,14 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.manager_staff_id</code>.
      */
-    public Integer getManagerStaffId() {
-        return (Integer) get(1);
+    public Long getManagerStaffId() {
+        return (Long) get(1);
     }
 
     /**
      * Setter for <code>sakila.store.address_id</code>.
      */
-    public StoreRecord setAddressId(Integer value) {
+    public StoreRecord setAddressId(Long value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Getter for <code>sakila.store.address_id</code>.
      */
-    public Integer getAddressId() {
-        return (Integer) get(2);
+    public Long getAddressId() {
+        return (Long) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -103,7 +103,7 @@ public class StoreRecord extends UpdatableRecordImpl<StoreRecord> {
     /**
      * Create a detached, initialised StoreRecord
      */
-    public StoreRecord(Integer storeId, Integer managerStaffId, Integer addressId, LocalDateTime lastUpdate) {
+    public StoreRecord(Long storeId, Long managerStaffId, Long addressId, LocalDateTime lastUpdate) {
         super(JStore.STORE);
 
         setStoreId(storeId);

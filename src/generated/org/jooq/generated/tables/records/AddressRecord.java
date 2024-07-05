@@ -23,7 +23,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Setter for <code>sakila.address.address_id</code>.
      */
-    public AddressRecord setAddressId(Integer value) {
+    public AddressRecord setAddressId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Getter for <code>sakila.address.address_id</code>.
      */
-    public Integer getAddressId() {
-        return (Integer) get(0);
+    public Long getAddressId() {
+        return (Long) get(0);
     }
 
     /**
@@ -83,7 +83,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Setter for <code>sakila.address.city_id</code>.
      */
-    public AddressRecord setCityId(Integer value) {
+    public AddressRecord setCityId(Long value) {
         set(4, value);
         return this;
     }
@@ -91,8 +91,8 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Getter for <code>sakila.address.city_id</code>.
      */
-    public Integer getCityId() {
-        return (Integer) get(4);
+    public Long getCityId() {
+        return (Long) get(4);
     }
 
     /**
@@ -145,7 +145,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -163,7 +163,7 @@ public class AddressRecord extends UpdatableRecordImpl<AddressRecord> {
     /**
      * Create a detached, initialised AddressRecord
      */
-    public AddressRecord(Integer addressId, String address, String address2, String district, Integer cityId, String postalCode, String phone, LocalDateTime lastUpdate) {
+    public AddressRecord(Long addressId, String address, String address2, String district, Long cityId, String postalCode, String phone, LocalDateTime lastUpdate) {
         super(JAddress.ADDRESS);
 
         setAddressId(addressId);

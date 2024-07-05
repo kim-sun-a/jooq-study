@@ -23,7 +23,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Setter for <code>sakila.city.city_id</code>.
      */
-    public CityRecord setCityId(Integer value) {
+    public CityRecord setCityId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,8 +31,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Getter for <code>sakila.city.city_id</code>.
      */
-    public Integer getCityId() {
-        return (Integer) get(0);
+    public Long getCityId() {
+        return (Long) get(0);
     }
 
     /**
@@ -53,7 +53,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Setter for <code>sakila.city.country_id</code>.
      */
-    public CityRecord setCountryId(Integer value) {
+    public CityRecord setCountryId(Long value) {
         set(2, value);
         return this;
     }
@@ -61,8 +61,8 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Getter for <code>sakila.city.country_id</code>.
      */
-    public Integer getCountryId() {
-        return (Integer) get(2);
+    public Long getCountryId() {
+        return (Long) get(2);
     }
 
     /**
@@ -85,7 +85,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record1<Integer> key() {
+    public Record1<Long> key() {
         return (Record1) super.key();
     }
 
@@ -103,7 +103,7 @@ public class CityRecord extends UpdatableRecordImpl<CityRecord> {
     /**
      * Create a detached, initialised CityRecord
      */
-    public CityRecord(Integer cityId, String city, Integer countryId, LocalDateTime lastUpdate) {
+    public CityRecord(Long cityId, String city, Long countryId, LocalDateTime lastUpdate) {
         super(JCity.CITY);
 
         setCityId(cityId);

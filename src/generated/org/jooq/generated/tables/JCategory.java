@@ -30,9 +30,11 @@ import org.jooq.generated.Keys;
 import org.jooq.generated.tables.JFilm.FilmPath;
 import org.jooq.generated.tables.JFilmCategory.FilmCategoryPath;
 import org.jooq.generated.tables.records.CategoryRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -59,7 +61,7 @@ public class JCategory extends TableImpl<CategoryRecord> {
     /**
      * The column <code>sakila.category.category_id</code>.
      */
-    public final TableField<CategoryRecord, Integer> CATEGORY_ID = createField(DSL.name("category_id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "");
+    public final TableField<CategoryRecord, Long> CATEGORY_ID = createField(DSL.name("category_id"), SQLDataType.INTEGERUNSIGNED.nullable(false).identity(true), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.category.name</code>.
@@ -139,8 +141,8 @@ public class JCategory extends TableImpl<CategoryRecord> {
     }
 
     @Override
-    public Identity<CategoryRecord, Integer> getIdentity() {
-        return (Identity<CategoryRecord, Integer>) super.getIdentity();
+    public Identity<CategoryRecord, Long> getIdentity() {
+        return (Identity<CategoryRecord, Long>) super.getIdentity();
     }
 
     @Override

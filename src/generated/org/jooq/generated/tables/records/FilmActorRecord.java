@@ -23,7 +23,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Setter for <code>sakila.film_actor.actor_id</code>.
      */
-    public FilmActorRecord setActorId(Integer value) {
+    public FilmActorRecord setActorId(Long value) {
         set(0, value);
         return this;
     }
@@ -31,14 +31,14 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.actor_id</code>.
      */
-    public Integer getActorId() {
-        return (Integer) get(0);
+    public Long getActorId() {
+        return (Long) get(0);
     }
 
     /**
      * Setter for <code>sakila.film_actor.film_id</code>.
      */
-    public FilmActorRecord setFilmId(Integer value) {
+    public FilmActorRecord setFilmId(Long value) {
         set(1, value);
         return this;
     }
@@ -46,8 +46,8 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Getter for <code>sakila.film_actor.film_id</code>.
      */
-    public Integer getFilmId() {
-        return (Integer) get(1);
+    public Long getFilmId() {
+        return (Long) get(1);
     }
 
     /**
@@ -70,7 +70,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Record2<Integer, Integer> key() {
+    public Record2<Long, Long> key() {
         return (Record2) super.key();
     }
 
@@ -88,7 +88,7 @@ public class FilmActorRecord extends UpdatableRecordImpl<FilmActorRecord> {
     /**
      * Create a detached, initialised FilmActorRecord
      */
-    public FilmActorRecord(Integer actorId, Integer filmId, LocalDateTime lastUpdate) {
+    public FilmActorRecord(Long actorId, Long filmId, LocalDateTime lastUpdate) {
         super(JFilmActor.FILM_ACTOR);
 
         setActorId(actorId);

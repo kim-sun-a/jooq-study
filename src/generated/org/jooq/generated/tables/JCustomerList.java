@@ -20,9 +20,11 @@ import org.jooq.TableField;
 import org.jooq.TableOptions;
 import org.jooq.generated.JSakila;
 import org.jooq.generated.tables.records.CustomerListRecord;
+import org.jooq.impl.AutoConverter;
 import org.jooq.impl.DSL;
 import org.jooq.impl.SQLDataType;
 import org.jooq.impl.TableImpl;
+import org.jooq.types.UInteger;
 
 
 /**
@@ -49,7 +51,7 @@ public class JCustomerList extends TableImpl<CustomerListRecord> {
     /**
      * The column <code>sakila.customer_list.ID</code>.
      */
-    public final TableField<CustomerListRecord, Integer> ID = createField(DSL.name("ID"), SQLDataType.INTEGER.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGER)), this, "");
+    public final TableField<CustomerListRecord, Long> ID = createField(DSL.name("ID"), SQLDataType.INTEGERUNSIGNED.nullable(false).defaultValue(DSL.inline("0", SQLDataType.INTEGERUNSIGNED)), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     /**
      * The column <code>sakila.customer_list.name</code>.
@@ -89,7 +91,7 @@ public class JCustomerList extends TableImpl<CustomerListRecord> {
     /**
      * The column <code>sakila.customer_list.SID</code>.
      */
-    public final TableField<CustomerListRecord, Integer> SID = createField(DSL.name("SID"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<CustomerListRecord, Long> SID = createField(DSL.name("SID"), SQLDataType.INTEGERUNSIGNED.nullable(false), this, "", new AutoConverter<UInteger, Long>(UInteger.class, Long.class));
 
     private JCustomerList(Name alias, Table<CustomerListRecord> aliased) {
         this(alias, aliased, (Field<?>[]) null, null);
