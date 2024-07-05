@@ -25,6 +25,13 @@ repositories {
 }
 
 dependencies {
+    implementation "org.jooq:jooq:${jooqVersion}"
+
+    jooqGenerator project(':jooq-custom')
+    jooqGenerator "org.jooq:jooq:${jooqVersion}"
+    jooqGenerator "org.jooq:jooq-meta:${jooqVersion}"
+
+
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation ('org.springframework.boot:spring-boot-starter-jooq') {
         exclude group: 'org.jooq:jooq'
@@ -33,9 +40,12 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
-    jooqGenerator project(':jooq-custom')
-    jooqGenerator "org.jooq:jooq:${jooqVersion}"
-    jooqGenerator "org.jooq:jooq-meta:${jooqVersion}"
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+
 }
 
 tasks.named('test') {
